@@ -21,5 +21,5 @@ class LSystem:
         return "{}: {}".format(self.iteration, " ".join(self.state))
 
     def iterate_many(self, num: int) -> None:
-        for i in range(num):
+        for _ in range(num):
             self.iterate()
