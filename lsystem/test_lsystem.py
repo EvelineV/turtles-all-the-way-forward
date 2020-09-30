@@ -3,7 +3,7 @@ import unittest
 from lsystem.lsystem import LSystem
 
 
-class TestSierpinski(unittest.TestCase):
+class TestSierpinskiArrowhead(unittest.TestCase):
     def setUp(self):
         self.system = LSystem(rules={"A": "B-A-B", "B": "A+B+A"}, start="A")
 
@@ -43,3 +43,11 @@ class TestAlgae(unittest.TestCase):
             self.assertEqual("".join(self.system.state), result)
             self.assertEqual(self.system.iteration, idx)
             self.system.iterate()
+
+
+def test_koch_curve():
+    # this is an l-system of only one variable
+    system = LSystem(rules={"F": "F+F−F−F+F"}, start="F")
+    system.iterate_many(2)
+    assert system.iteration == 2
+    assert "".join(system.state) == "F+F−F−F+F+F+F−F−F+F−F+F−F−F+F−F+F−F−F+F+F+F−F−F+F"
