@@ -5,10 +5,7 @@ class LSystem:
         self.rules = rules
 
     def apply_rule(self, x):
-        for rule, result in self.rules.items():
-                if rule == x:
-                    return result
-        return x
+        return self.rules.get(x, x)
 
     def iterate(self):
         new_state = []
