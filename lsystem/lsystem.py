@@ -16,11 +16,10 @@ class LSystem:
             new_state += self.apply_rule(x)
         self.state = new_state
         self.iteration += 1
-    
+
     def __str__(self) -> str:
         return "{}: {}".format(self.iteration, " ".join(self.state))
 
     def iterate_many(self, num: int) -> None:
         for i in range(num):
             self.iterate()
-

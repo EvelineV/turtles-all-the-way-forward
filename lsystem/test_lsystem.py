@@ -1,6 +1,6 @@
 import unittest
 
-from lsys import LSystem
+from lsystem.lsystem import LSystem
 
 
 class TestSierpinski(unittest.TestCase):
