@@ -27,19 +27,19 @@ class TestSierpinski(unittest.TestCase):
 class TestAlgae(unittest.TestCase):
     def setUp(self):
         self.system = LSystem(rules={"A": "AB", "B": "A"}, start="A")
-        self.expected = {
-            0: "A",
-            1: "AB",
-            2: "ABA",
-            3: "ABAAB",
-            4: "ABAABABA",
-            5: "ABAABABAABAAB",
-            6: "ABAABABAABAABABAABABA",
-            7: "ABAABABAABAABABAABABAABAABABAABAAB"
-        }
+        self.expected = [
+            "A",
+            "AB",
+            "ABA",
+            "ABAAB",
+            "ABAABABA",
+            "ABAABABAABAAB",
+            "ABAABABAABAABABAABABA",
+            "ABAABABAABAABABAABABAABAABABAABAAB"
+        ]
 
     def test_many(self):
-        for it, result in self.expected.items():
+        for idx, result in enumerate(self.expected):
             self.assertEqual("".join(self.system.state), result)
-            self.assertEqual(self.system.iteration, it)
+            self.assertEqual(self.system.iteration, idx)
             self.system.iterate()
