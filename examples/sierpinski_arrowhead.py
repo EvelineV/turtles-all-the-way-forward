@@ -2,9 +2,10 @@ import os.path
 import sys
 import time
 import turtle
-sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
 
 from PIL import Image
+
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
 
 from lsystem import lsystem  # pylint: disable=wrong-import-position
 from ruleturtle import ruleturtle  # pylint: disable=wrong-import-position
