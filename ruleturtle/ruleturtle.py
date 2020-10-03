@@ -9,5 +9,8 @@ class RuleTurtle(turtle.Turtle):
 
     def draw(self, moves: Iterable[str]):
         for m in moves:
-            fname, param = self.rules[m]
+            action = self.rules.get(m)
+            if not action:
+                continue
+            fname, param = action
             getattr(self, fname)(param)
