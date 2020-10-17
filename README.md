@@ -1,5 +1,6 @@
 ## Turtles all the way forward!
-![](https://github.com/EvelineV/turtles-all-the-way-forward/workflows/CI/badge.svg?branch=master)
+
+[![Tests Actions Status](https://github.com/EvelineV/turtles-all-the-way-forward/workflows/run-tests/badge.svg)](https://github.com/EvelineV/turtles-all-the-way-forward/actions)
 
 These turtles are not stacked on top of each other :-) they keep walking!
 
